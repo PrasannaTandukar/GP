@@ -3,6 +3,7 @@
 :root {
   /* Background color for main contents */
   --main-background: #f8f9fa;
+  --main-background-dark: #e9ecef;
   /* Background color for sidebars */
   --sidebar-background: #212529;
 
@@ -139,7 +140,7 @@ body {
 }
 
 .main-record .main-content {
-  background-color: var(--main-background);
+  background-color: var(--main-background-dark);
 }
 
 .sidebar-content {
@@ -178,4 +179,32 @@ body {
   border: none;
   cursor: pointer;
   letter-spacing: 1px;
+}
+
+/* Table container */
+.table-container {
+  width: 80%;
+  min-height: 500px;
+  margin: 150px auto;
+  padding: 20px 25px;
+  background-color: var(--main-background);
+  border-radius: 5px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+table {
+  margin: 15px auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid var(--border-color-input);
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: var(--border-color-input);
 }
