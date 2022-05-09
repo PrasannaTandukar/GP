@@ -139,7 +139,7 @@ body {
 }
 
 .main-record .main-content {
-  background-color: aquamarine;
+  background-color: var(--main-background);
 }
 
 .sidebar-content {
