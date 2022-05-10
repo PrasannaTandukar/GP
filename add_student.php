@@ -1,13 +1,16 @@
+<?php include "./includes/db.php" ?>
+<?php include "./includes/functions.php" ?>
 <?php session_start(); ?>
 
 <?php
-    if (isset($_SESSION['role'])) {
-
-    }
-
-    if ($_SESSION['role'] !== 'admin') {
+    if (!isset($_SESSION['role'])) {
+        header("Location: ./index.php");
+    } 
+    else if ($_SESSION['role'] !== 'admin') {
         header("Location: ./index.php");
     }
+
+    createStudent();
 ?>
 
 <?php include "./includes/header.php"; ?>
@@ -17,7 +20,7 @@
     <div class="main-content">
         <div class="table-container">
             <h1>Add Student</h1>
-            <form class="record-form" action="" method="post">
+            <form class="record-form" action="add_student.php" method="post">
                 <div class="form-group">
                     <label for="firstname">First name: </label>
                     <br>
