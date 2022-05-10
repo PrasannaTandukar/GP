@@ -1,3 +1,15 @@
+<?php session_start(); ?>
+
+<?php
+    if (isset($_SESSION['role'])) {
+
+    }
+
+    if ($_SESSION['role'] !== 'admin') {
+        header("Location: ./index.php");
+    }
+?>
+
 <?php include "./includes/header.php"; ?>
 
 <main class="main-record">

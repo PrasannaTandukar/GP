@@ -1,10 +1,24 @@
+<?php session_start(); ?>
+
+<?php
+    if (!isset($_SESSION['role'])) {
+        header("Location: ./index.php");
+    } 
+    else if ($_SESSION['role'] !== 'admin') {
+        header("Location: ./index.php");
+    }
+?>
+
 <?php include "./includes/header.php"; ?>
 
 <main class="main-record">
     <?php include "./includes/sidebar.php" ?>
     <div class="main-content">
         <div class="table-container">
-            <h1>Student</h1>
+            <div class="top-table">
+                <h1>Student</h1>
+                <a href="./add_student.php">Add New</a>
+            </div>
             <table>
                 <tr>
                     <th>Company</th>

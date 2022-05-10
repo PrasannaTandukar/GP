@@ -13,7 +13,7 @@
         </div>
         <div class="part-3">
             <hr>
-            <button class="sidebar-btn">Sign out</button>
+            <button class="sidebar-btn"><a href="./includes/logout.php">Sign out</a></button>
         </div>
     </div>
 </div>
