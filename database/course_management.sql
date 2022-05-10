@@ -4,7 +4,7 @@ CREATE TABLE students (
     firstname VARCHAR(35) NOT NULL,
     lastname VARCHAR(35) NOT NULL,
     gender CHAR NOT NULL,
-    contact INT(10) NOT NULL,
+    contact VARCHAR(10) NOT NULL,
     email VARCHAR(50) NOT NULL,
     country VARCHAR(50) NOT NULL,
     city VARCHAR(50) NOT NULL,

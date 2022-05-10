@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label for="contact">Contact: </label>
                     <br>
-                    <input type="text" name="contact" required>
+                    <input type="number" name="contact" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email: </label>
@@ -63,6 +63,13 @@
                     <label for="date-of-birth">Date of birth: </label>
                     <br>
                     <input type="date" name="date-of-birth" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-id">Course ID: </label>
+                    <br>
+                    <select name="course-id">
+                        <option value="1">1</option>
+                    </select>
                 </div>
                 <input class="form-button" type="submit" name="submit" value="Create">
             </form>

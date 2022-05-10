@@ -16,6 +16,7 @@ function createStudent() {
         $country = $_POST['country'];
         $city = $_POST['city'];
         $date_of_birth = $_POST['date-of-birth'];
+        $course_id = $_POST['course-id'];
 
         // Prevent SQL injection
         mysqli_real_escape_string($connection, $firstname);
@@ -26,16 +27,17 @@ function createStudent() {
         mysqli_real_escape_string($connection, $country);
         mysqli_real_escape_string($connection, $city);
         mysqli_real_escape_string($connection, $date_of_birth);
+        mysqli_real_escape_string($connection, $course_id);
 
-        $query = "INSERT INTO students(firstname, lastname, gender, contact, email, country, city, date_of_birth) ";
-        $query .= "VALUES ('$firstname', '$lastname', '$gender', '$contact', '$email', '$country', '$city', '$date_of_birth')";
+        $query = "INSERT INTO students (firstname, lastname, gender, contact, email, country, city, date_of_birth, course_id) ";
+        $query .= "VALUES ('$firstname', '$lastname', '$gender', '$contact', '$email', '$country', '$city', '$date_of_birth', $course_id)";
 
         $result = mysqli_query($connection, $query);
 
         if (!$result) {
             die("Query failed");
         } else {
-            echo "Record Created";
+            echo "<div class='record-created' style='padding: 10px; position: absolute; right: 0; background-color: green; color: var(--text-white); text-align: center;'>Record Created</div>";
         }
     }
 }
