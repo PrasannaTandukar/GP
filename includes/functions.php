@@ -1,7 +1,5 @@
 <?php
 
-use LDAP\Result;
-
 include "./db.php";
 
 function createStudent() {
@@ -40,4 +38,17 @@ function createStudent() {
             echo "<div class='record-created' style='padding: 10px; position: absolute; right: 0; background-color: green; color: var(--text-white); text-align: center;'>Record Created</div>";
         }
     }
+}
+
+function readStudent() {
+    global $connection;
+
+    $query = "SELECT * FROM students";
+        
+    $result = mysqli_query($connection, $query);
+    if (!$result) {
+        die("Query failed");
+    }
+
+    return $result;
 }

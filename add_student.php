@@ -3,14 +3,7 @@
 <?php session_start(); ?>
 
 <?php
-    if (!isset($_SESSION['role'])) {
-        header("Location: ./index.php");
-    } 
-    else if ($_SESSION['role'] !== 'admin') {
-        header("Location: ./index.php");
-    }
-
-    createStudent();
+    include "./includes/check_session_admin.php"
 ?>
 
 <?php include "./includes/header.php"; ?>
