@@ -3,7 +3,8 @@
 <?php session_start(); ?>
 
 <?php
-    include "./includes/check_session_admin.php"
+    include "./includes/check_session_admin.php";
+    createStudent();
 ?>
 
 <?php include "./includes/header.php"; ?>
