@@ -1,13 +1,10 @@
+<?php include "./includes/db.php" ?>
+<?php include "./includes/functions.php" ?>
 <?php session_start(); ?>
 
 <?php
-    if (isset($_SESSION['role'])) {
-
-    }
-
-    if ($_SESSION['role'] !== 'admin') {
-        header("Location: ./index.php");
-    }
+    include "./includes/check_session_admin.php";
+    createStudent();
 ?>
 
 <?php include "./includes/header.php"; ?>
@@ -17,7 +14,7 @@
     <div class="main-content">
         <div class="table-container">
             <h1>Add Student</h1>
-            <form class="record-form" action="" method="post">
+            <form class="record-form" action="add_student.php" method="post">
                 <div class="form-group">
                     <label for="firstname">First name: </label>
                     <br>
@@ -39,7 +36,7 @@
                 <div class="form-group">
                     <label for="contact">Contact: </label>
                     <br>
-                    <input type="text" name="contact" required>
+                    <input type="number" name="contact" required>
                 </div>
                 <div class="form-group">
                     <label for="email">Email: </label>
@@ -60,6 +57,13 @@
                     <label for="date-of-birth">Date of birth: </label>
                     <br>
                     <input type="date" name="date-of-birth" required>
+                </div>
+                <div class="form-group">
+                    <label for="course-id">Course ID: </label>
+                    <br>
+                    <select name="course-id">
+                        <option value="1">1</option>
+                    </select>
                 </div>
                 <input class="form-button" type="submit" name="submit" value="Create">
             </form>
