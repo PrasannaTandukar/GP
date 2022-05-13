@@ -10,6 +10,8 @@
 
     // Stores rows of data fetched from student table
     $result = readStudent();
+
+    deleteStudent();
 ?>
 
 <?php include "./includes/header.php"; ?>
@@ -48,7 +50,7 @@
                             echo "<th style='font-weight: normal;'>{$value}</th>";
                         }
                         ?>
-                        <th><a href="#"><span class="material-symbols-outlined" style="color: black;">delete</span></a></th>
+                        <th><a href="./records_management.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined" style="color: black;">delete</span></a></th>
                         <th><a href="#"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
                         </tr>
                         <?php

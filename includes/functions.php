@@ -35,7 +35,8 @@ function createStudent() {
         if (!$result) {
             die("Query failed");
         } else {
-            echo "<div class='record-created' style='padding: 10px; position: absolute; right: 0; background-color: green; color: var(--text-white); text-align: center;'>Record Created</div>";
+            header("Location: ./records_management.php");
+            // echo "<div class='record-created' style='padding: 10px; position: absolute; right: 0; background-color: green; color: var(--text-white); text-align: center;'>Record Created</div>";
         }
     }
 }
@@ -51,4 +52,25 @@ function readStudent() {
     }
 
     return $result;
+}
+
+function deleteStudent() {
+    if (isset($_GET['id'])) {
+        global $connection;
+        $id = $_GET['id'];
+    
+        $query = "DELETE FROM students ";
+        $query .= "WHERE id = $id ";
+        echo $query;
+        
+        $result = mysqli_query($connection, $query);
+    
+        if (!$result) {
+            die("Query Failed");
+        } else {
+            // echo "Record Deleted";
+            header("Location: ./records_management.php");
+        }
+
+    }
 }

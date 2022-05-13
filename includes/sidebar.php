@@ -5,7 +5,7 @@
             <hr>
         </div>
         <div class="part-2">
-            <a href="#">Student</a>
+            <a href="./records_management.php">Student</a>
             <a href="#">2</a>
             <a href="#">3</a>
             <a href="#">4</a>
