@@ -1,0 +1,166 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    
+    
+
+}
+.heading{
+    color: white;
+    background-color: black;
+    font-size: 18px;
+    line-height:  40px;
+    margin-top: 0px;
+    padding-bottom: 12px;
+}
+
+
+.start{
+    
+    margin: 0px;
+    text-align: center;
+    color: black;
+
+}
+.start p{
+    margin-top: 250px;
+    position: absolute;  
+    width: 1280px;
+    font-size: 40px;
+    
+}
+#col{
+    background-color: white;
+    width: 100%;
+}
+
+.griding{
+    display: grid;
+}
+.one{
+    
+    background-attachment: fixed;
+    font-size: 27px;
+    text-align: center;
+    margin-top: 0px;
+    
+}
+.cube{
+    top: 1px;
+
+}
+
+#firstfont{
+    position: absolute;
+    margin-right: 900px;
+    margin-top: 260px;
+   
+}
+#secondfont{
+    position: absolute;
+    margin-left: 94%;
+    margin-top: 620px;
+}
+
+.allCourses-btn{
+    position: absolute;  
+    background-color: rgb(12, 2, 2);
+    text-decoration: none;
+    color: white;
+    margin-block-end: 22px;
+    top: 51%;
+    right: 40%;
+    border-color: antiquewhite;
+    font-size: 19px;
+    padding: 13px 35px;
+    cursor: pointer;
+    display: inline; 
+    
+}
+
+.allCourses-btn:hover{
+    border: 1px;
+    background-color: white;
+    color: black;
+    transition: 1s;
+}
+
+.contents{
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    transition: 1s;
+}
+
+.first-content{
+
+    flex-direction: row;
+    margin-left: 19px;
+    margin-right: 20px;
+    padding: 24px 12px;
+    background-color: rgb(228, 220, 222);
+    color: black;
+    box-sizing: border-box;
+    flex-basis: 45%;
+    border-radius: 10px;
+    margin-bottom: 3%;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.first-content img{
+    margin-top: 0%;
+
+}
+
+.first-content:hover{
+    box-shadow: 0px 0px 31px 0px rgba(0 , 0 , 0.6,  0.5) ;
+    
+}
+
+
+.first-content h1{
+    font-size: large;
+}
+
+@media (max-width :700px) {
+    #secondfont{
+        position: absolute;
+        margin-left: 93%;
+        margin-top: 260px;
+    }
+    .readmore-btn{
+        position: absolute;  
+        background-color: rgb(12, 2, 2);
+        text-decoration: none;
+        display: inline; 
+        color: white;
+        margin-block-end: 22px;
+        top: 63%;
+        right: 30%;
+        border-color: antiquewhite;
+        font-size: 20px;
+        padding: 12px 34px;
+        cursor: pointer;
+       
+        
+    }
+    .contents{
+        display: inline-block;
+        
+    }
+    .first-contents{
+    
+        flex-direction: column;
+        margin-left: 19px;
+    }
+    .first-content h1{
+        background-color:   black;
+        color: white;
+    }
+    .cube{
+        height: 100vh;
+        width: 98%;
+    }
+    
+}
