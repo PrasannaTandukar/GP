@@ -6,12 +6,12 @@
 
 <?php
     include "./includes/db.php";
-    include "./includes/functions.php";
+    include "./includes/Student.php";
 
     // Stores rows of data fetched from student table
-    $result = readStudent();
+    $result = Student::readStudent();
 
-    deleteStudent();
+    Student::deleteStudent();
 ?>
 
 <?php include "./includes/header.php"; ?>
@@ -51,7 +51,7 @@
                         }
                         ?>
                         <th><a href="./records_management.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined" style="color: black;">delete</span></a></th>
-                        <th><a href="#"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
+                        <th><a href="./edit_student.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
                         </tr>
                         <?php
                     }

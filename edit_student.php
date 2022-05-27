@@ -4,17 +4,18 @@
 
 <?php
     include "./includes/check_session_admin.php";
-    Student::createStudent();
+    $id = $_GET['id'];
+    Student::updateStudent();
 ?>
 
-<?php include "./includes/header.php"; ?>
+<?php include "./includes/header.php" ?>
 
 <main class="main-record">
     <?php include "./includes/sidebar.php" ?>
     <div class="main-content">
         <div class="table-container">
-            <h1>Add Student</h1>
-            <form class="record-form" action="add_student.php" method="post">
+            <h1>Edit Student</h1>
+            <form class="record-form" action="edit_student.php" method="post">
                 <div class="form-group">
                     <label for="firstname">First name: </label>
                     <br>
@@ -58,14 +59,9 @@
                     <br>
                     <input type="date" name="date-of-birth" required>
                 </div>
-                <div class="form-group">
-                    <label for="course-id">Course ID: </label>
-                    <br>
-                    <select name="course-id">
-                        <option value="1">1</option>
-                    </select>
-                </div>
-                <input class="form-button" type="submit" name="submit" value="Create">
+                    <!-- Send user id anonymously -->
+                    <input type="text" name="id" value="<?php echo $id ?>" hidden>
+                <input class="form-button" type="submit" name="submit" value="Update">
             </form>
         </div>
     </div>
