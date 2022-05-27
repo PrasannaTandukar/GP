@@ -6,12 +6,12 @@
 
 <?php
     include "./includes/db.php";
-    include "./includes/functions.php";
+    include "./includes/Student.php";
 
     // Stores rows of data fetched from student table
-    $result = readStudent();
+    $result = Student::readStudent();
 
-    deleteStudent();
+    Student::deleteStudent();
 ?>
 
 <?php include "./includes/header.php"; ?>

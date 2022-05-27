@@ -1,10 +1,10 @@
 <?php include "./includes/db.php" ?>
-<?php include "./includes/functions.php" ?>
+<?php include "./includes/Student.php" ?>
 <?php session_start(); ?>
 
 <?php
     include "./includes/check_session_admin.php";
-    createStudent();
+    Student::createStudent();
 ?>
 
 <?php include "./includes/header.php"; ?>
