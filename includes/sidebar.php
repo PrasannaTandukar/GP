@@ -6,8 +6,8 @@
         </div>
         <div class="part-2">
             <a href="./records_management.php">Student</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
+            <a href="./course_record.php">Course</a>
+            <a href="./module_record.php">Module</a>
             <a href="#">4</a>
             <a href="#">5</a>
         </div>
