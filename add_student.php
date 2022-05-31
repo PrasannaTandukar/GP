@@ -1,10 +1,13 @@
 <?php include "./includes/db.php" ?>
 <?php include "./includes/Student.php" ?>
+<?php include "./includes/Course.php" ?>
 <?php session_start(); ?>
 
 <?php
     include "./includes/check_session_admin.php";
     Student::createStudent();
+
+    $courses = Course::getAllId();
 ?>
 
 <?php include "./includes/header.php"; ?>
@@ -59,10 +62,24 @@
                     <input type="date" name="date-of-birth" required>
                 </div>
                 <div class="form-group">
-                    <label for="course-id">Course ID: </label>
+                    <label for="course-id">Course Name: </label>
                     <br>
                     <select name="course-id">
-                        <option value="1">1</option>
+                        <!-- Code to insert each row fetched from course table -->
+                        <?php
+                            while($row = mysqli_fetch_assoc($courses)) {
+                                ?>
+                                <tr>
+                                <?php
+                                foreach ($row as $value) {
+                                    $data = Course::getNameFromID($value);
+                                    $finalData = mysqli_fetch_assoc($data);
+                                    echo "<option value='{$value}'>{$finalData['name']}</option>";
+                                }
+                                ?>
+                                <?php
+                            }
+                        ?>
                     </select>
                 </div>
                 <input class="form-button" type="submit" name="submit" value="Create">

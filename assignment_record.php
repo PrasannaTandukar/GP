@@ -6,12 +6,12 @@
 
 <?php
     include "./includes/db.php";
-    include "./includes/Course.php";
+    include "./includes/Assignment.php";
 
     // Stores rows of data fetched from student table
-    $result = Course::read();
+    $result = Assignment::read();
 
-    Course::delete();
+    Assignment::delete();
 ?>
 
 <?php include "./includes/header.php"; ?>
@@ -21,18 +21,20 @@
     <div class="main-content">
         <div class="table-container">
             <div class="top-table">
-                <h1>Course</h1>
-                <a href="./add_course_record.php">Add New</a>
+                <h1>Assignment</h1>
+                <a href="./add_assignment_record.php">Add New</a>
             </div>
             <table>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Module ID</th>
                     <th>Delete</th>
                     <th>Edit</th>
-                    <th>Add Module</th>
                 </tr>
-                <!-- Code to insert each row fetched from course table -->
+                <!-- Code to insert each row fetched from students table -->
                 <?php
                     while($row = mysqli_fetch_assoc($result)) {
                         ?>
@@ -42,9 +44,8 @@
                             echo "<th style='font-weight: normal;'>{$value}</th>";
                         }
                         ?>
-                        <th><a href="./course_record.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined" style="color: black;">delete</span></a></th>
-                        <th><a href="./edit_course_record.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
-                        <th><a href="./add_c_m.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">add</span></a></th>
+                        <th><a href="./assignment_record.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined" style="color: black;">delete</span></a></th>
+                        <th><a href="./edit_assignment_record.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
                         </tr>
                         <?php
                     }

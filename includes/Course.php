@@ -84,4 +84,31 @@ class Course {
             }
         }
     }
-}
+
+    public static function getAllId() {
+        global $connection;
+
+        $query = "SELECT id FROM courses";
+            
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
+
+    public static function getNameFromID($id) {
+        global $connection;
+
+        $query = "SELECT name FROM courses WHERE id= $id";
+        echo $query;
+
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
+} 
