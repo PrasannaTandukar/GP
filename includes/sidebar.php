@@ -8,7 +8,7 @@
             <a href="./records_management.php">Student</a>
             <a href="./course_record.php">Course</a>
             <a href="./module_record.php">Module</a>
-            <a href="#">4</a>
+            <a href="./assignment_record.php">Assignment</a>
             <a href="#">5</a>
         </div>
         <div class="part-3">

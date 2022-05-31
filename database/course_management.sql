@@ -59,28 +59,35 @@ CREATE TABLE assignments (
 -- Add foreign key
 ALTER TABLE students
 ADD CONSTRAINT fk_s_courses
-FOREIGN KEY (course_id) REFERENCES courses(id);
+FOREIGN KEY (course_id) REFERENCES courses(id)
+ON DELETE CASCADE;
 
 ALTER TABLE attendances
 ADD CONSTRAINT fk_a_students
-FOREIGN KEY (student_id) REFERENCES students(id);
+FOREIGN KEY (student_id) REFERENCES students(id)
+ON DELETE CASCADE;
 
 ALTER TABLE course_modules
 ADD CONSTRAINT fk_c_courses
-FOREIGN KEY (course_id) REFERENCES courses(id);
+FOREIGN KEY (course_id) REFERENCES courses(id)
+ON DELETE CASCADE;
 
 ALTER TABLE course_modules
 ADD CONSTRAINT fk_c_modules
-FOREIGN KEY (module_id) REFERENCES modules(id);
+FOREIGN KEY (module_id) REFERENCES modules(id)
+ON DELETE CASCADE;
 
 ALTER TABLE student_modules
 ADD CONSTRAINT fk_s_students
-FOREIGN KEY (student_id) REFERENCES students(id);
+FOREIGN KEY (student_id) REFERENCES students(id)
+ON DELETE CASCADE;
 
 ALTER TABLE student_modules
 ADD CONSTRAINT fk_s_modules
-FOREIGN KEY (module_id) REFERENCES modules(id);
+FOREIGN KEY (module_id) REFERENCES modules(id)
+ON DELETE CASCADE;
 
 ALTER TABLE assignments
 ADD CONSTRAINT fk_a_modules
-FOREIGN KEY (module_id) REFERENCES modules(id);
+FOREIGN KEY (module_id) REFERENCES modules(id)
+ON DELETE CASCADE;
