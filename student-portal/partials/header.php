@@ -7,6 +7,6 @@
     <!-- Line CSS file -->
     <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../css/style.css">
-    <title>Course Management System</title>
+    <title>Student Portal</title>
 </head>
 <body>

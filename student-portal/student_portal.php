@@ -1,28 +1,23 @@
 <?php session_start(); ?>
 
 <?php
-    include "./includes/check_session_admin.php"
+    include "../includes/check_session_student.php";
+    include "../includes/db.php";
+    include "../includes/Student.php";
 ?>
 
 <?php
-    include "./includes/db.php";
-    include "./includes/Student.php";
-
-    // Stores rows of data fetched from student table
-    $result = Student::readStudent();
-
-    Student::deleteStudent();
+    $result = Student::getSingleStudent($_SESSION['username']);
 ?>
 
-<?php include "./includes/header.php"; ?>
+<?php include "./partials/header.php"; ?>
 
 <main class="main-record">
-    <?php include "./includes/sidebar.php" ?>
+    <?php include "./partials/sidebar.php" ?>
     <div class="main-content">
         <div class="table-container">
             <div class="top-table">
                 <h1>Student</h1>
-                <a href="./add_student.php">Add New</a>
             </div>
             <table>
                 <tr>
@@ -37,8 +32,6 @@
                     <th>DOB</th>
                     <th>Date Registered</th>
                     <th>Course_id</th>
-                    <th>Delete</th>
-                    <th>Edit</th>
                 </tr>
                 <!-- Code to insert each row fetched from students table -->
                 <?php
@@ -50,8 +43,6 @@
                             echo "<th style='font-weight: normal;'>{$value}</th>";
                         }
                         ?>
-                        <th><a href="./records_management.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined" style="color: black;">delete</span></a></th>
-                        <th><a href="./edit_student.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
                         </tr>
                         <?php
                     }
@@ -61,4 +52,5 @@
     </div>
 </main>
 
-<?php include "./includes/footer.php" ?>
+
+<?php include "../includes/footer.php" ?>

@@ -76,7 +76,7 @@ class Student {
         }
     }
 
-     public static function updateStudent() {
+    public static function updateStudent() {
         if (isset($_POST['submit'])) {
             global $connection;
             
@@ -113,5 +113,19 @@ class Student {
                 // echo "<div class='record-created' style='padding: 10px; position: absolute; right: 0; background-color: green; color: var(--text-white); text-align: center;'>Record Created</div>";
             }
         }
+    }
+
+    public static function getSingleStudent($id) {
+        global $connection;
+
+        $query = "SELECT * FROM students WHERE id = $id";
+
+        $result = mysqli_query($connection, $query);
+
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
     }
 }

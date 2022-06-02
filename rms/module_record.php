@@ -1,12 +1,12 @@
 <?php session_start(); ?>
 
 <?php
-    include "./includes/check_session_admin.php"
+    include "../includes/check_session_admin.php"
 ?>
 
 <?php
-    include "./includes/db.php";
-    include "./includes/Module.php";
+    include "../includes/db.php";
+    include "../includes/Module.php";
 
     // Stores rows of data fetched from student table
     $result = Module::read();
@@ -14,10 +14,10 @@
     Module::delete();
 ?>
 
-<?php include "./includes/header.php"; ?>
+<?php include "../includes/header.php"; ?>
 
 <main class="main-record">
-    <?php include "./includes/sidebar.php" ?>
+    <?php include "../includes/sidebar.php" ?>
     <div class="main-content">
         <div class="table-container">
             <div class="top-table">
@@ -52,4 +52,4 @@
     </div>
 </main>
 
-<?php include "./includes/footer.php" ?>
+<?php include "../includes/footer.php" ?>

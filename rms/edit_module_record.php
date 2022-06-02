@@ -1,21 +1,21 @@
-<?php include "./includes/db.php" ?>
-<?php include "./includes/Course.php" ?>
+<?php include "../includes/db.php" ?>
+<?php include "../includes/Module.php" ?>
 <?php session_start(); ?>
 
 <?php
-    include "./includes/check_session_admin.php";
+    include "../includes/check_session_admin.php";
     $id = $_GET['id'];
-    Course::update();
+    Module::update();
 ?>
 
-<?php include "./includes/header.php" ?>
+<?php include "../includes/header.php" ?>
 
 <main class="main-record">
-    <?php include "./includes/sidebar.php" ?>
+    <?php include "../includes/sidebar.php" ?>
     <div class="main-content">
         <div class="table-container">
-            <h1>Edit Course</h1>
-            <form class="record-form" action="edit_course_record.php" method="post">
+            <h1>Edit Module</h1>
+            <form class="record-form" action="edit_module_record.php" method="post">
                 <div class="form-group">
                     <label for="name">Name: </label>
                     <br>
@@ -29,4 +29,4 @@
     </div>
 </main>
 
-<?php include "./includes/footer.php" ?>
+<?php include "../includes/footer.php" ?>
