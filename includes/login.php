@@ -27,7 +27,7 @@ if (isset($_POST['login'])) {
     if ($username === $db_username && $password === $db_password) {
         $_SESSION['username'] = $db_username;
         $_SESSION['role'] = $db_role;
-        header("Location: ../records_management.php");
+        header("Location: ../rms/records_management.php");
     }
     else {
         header("Location: ../index.php");

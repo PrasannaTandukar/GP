@@ -1,23 +1,21 @@
-<?php include "./includes/db.php" ?>
-<?php include "./includes/Student.php" ?>
-<?php include "./includes/Course.php" ?>
+<?php include "../includes/db.php" ?>
+<?php include "../includes/Student.php" ?>
 <?php session_start(); ?>
 
 <?php
-    include "./includes/check_session_admin.php";
-    Student::createStudent();
-
-    $courses = Course::getAllId();
+    include "../includes/check_session_admin.php";
+    $id = $_GET['id'];
+    Student::updateStudent();
 ?>
 
-<?php include "./includes/header.php"; ?>
+<?php include "../includes/header.php" ?>
 
 <main class="main-record">
-    <?php include "./includes/sidebar.php" ?>
+    <?php include "../includes/sidebar.php" ?>
     <div class="main-content">
         <div class="table-container">
-            <h1>Add Student</h1>
-            <form class="record-form" action="add_student.php" method="post">
+            <h1>Edit Student</h1>
+            <form class="record-form" action="edit_student.php" method="post">
                 <div class="form-group">
                     <label for="firstname">First name: </label>
                     <br>
@@ -61,31 +59,12 @@
                     <br>
                     <input type="date" name="date-of-birth" required>
                 </div>
-                <div class="form-group">
-                    <label for="course-id">Course Name: </label>
-                    <br>
-                    <select name="course-id">
-                        <!-- Code to insert each row fetched from course table -->
-                        <?php
-                            while($row = mysqli_fetch_assoc($courses)) {
-                                ?>
-                                <tr>
-                                <?php
-                                foreach ($row as $value) {
-                                    $data = Course::getNameFromID($value);
-                                    $finalData = mysqli_fetch_assoc($data);
-                                    echo "<option value='{$value}'>{$finalData['name']}</option>";
-                                }
-                                ?>
-                                <?php
-                            }
-                        ?>
-                    </select>
-                </div>
-                <input class="form-button" type="submit" name="submit" value="Create">
+                    <!-- Send user id anonymously -->
+                    <input type="text" name="id" value="<?php echo $id ?>" hidden>
+                <input class="form-button" type="submit" name="submit" value="Update">
             </form>
         </div>
     </div>
 </main>
 
-<?php include "./includes/footer.php" ?>
+<?php include "../includes/footer.php" ?>
