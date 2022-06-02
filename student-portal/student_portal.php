@@ -8,6 +8,7 @@
 
 <?php
     $result = Student::getSingleStudent($_SESSION['username']);
+    $studentName = Student::getStudentName($_SESSION['username']);
 ?>
 
 <?php include "./partials/header.php"; ?>
@@ -17,7 +18,18 @@
     <div class="main-content">
         <div class="table-container">
             <div class="top-table">
-                <h1>Student</h1>
+                <h1>
+                    Welcome,
+                    <?php
+                        $tempData = " ";
+                        while($row = mysqli_fetch_assoc($studentName)) {
+                            foreach($row as $value) {
+                                $tempData .= $value . " ";
+                            }
+                        }
+                        echo $tempData;
+                    ?>
+                </h1>
             </div>
             <table>
                 <tr>

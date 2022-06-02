@@ -255,3 +255,37 @@ tr:nth-child(even) {
   border-radius: 5px;
   font-size: 18px;
 }
+
+/* Module container */
+.modules {
+  padding: 20px;
+}
+
+.module-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.module {
+  height: auto;
+  width: 400px;
+  margin: 20px 20px 20px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--text-white);
+}
+
+.module img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.module h3 {
+  padding: 5px 10px;
+  margin: 0;
+}

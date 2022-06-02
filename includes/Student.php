@@ -1,5 +1,8 @@
 <?php
 
+use LDAP\Result;
+use LDAP\ResultEntry;
+
 include "./db.php";
 
 class Student {
@@ -119,6 +122,35 @@ class Student {
         global $connection;
 
         $query = "SELECT * FROM students WHERE id = $id";
+
+        $result = mysqli_query($connection, $query);
+
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
+
+    public static function getStudentName($id) {
+        global $connection;
+
+        $query = "SELECT firstname, lastname FROM students WHERE id = $id";
+
+        $result = mysqli_query($connection, $query);
+
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
+
+
+    public static function getLinkedCourseId($id) {
+        global $connection;
+
+        $query = "SELECT course_id FROM students WHERE id = $id";
 
         $result = mysqli_query($connection, $query);
 

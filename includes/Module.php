@@ -102,7 +102,6 @@ class Module {
         global $connection;
 
         $query = "SELECT name FROM modules WHERE id= $id";
-        echo $query;
 
         $result = mysqli_query($connection, $query);
         if (!$result) {
