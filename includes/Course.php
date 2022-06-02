@@ -102,7 +102,19 @@ class Course {
         global $connection;
 
         $query = "SELECT name FROM courses WHERE id= $id";
-        echo $query;
+
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
+
+    public static function getAllModulesLinked($id) {
+        global $connection;
+
+        $query = "SELECT module_id FROM course_modules WHERE course_id = $id";
 
         $result = mysqli_query($connection, $query);
         if (!$result) {
