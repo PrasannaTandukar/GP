@@ -29,20 +29,18 @@
                 ?>
             </h1>
             <div class="module-container">
-                <div class="module">
-                    <img src="../images/1.jpg" alt="#">
-                    <h3>Module 1</h3>
-                </div>
                 <?php
                     while ($row = mysqli_fetch_assoc($moduleResult)) {
                         ?>
                         <div class="module">
-                            <img src="../images/1.jpg" alt="#">
-                            <h3><?php 
-                                    $rawModule = Module::getNameFromID($row['module_id']);
-                                    $parsedModule = mysqli_fetch_assoc($rawModule);
-                                    echo $parsedModule['name']; 
-                                ?></h3>
+                            <a href="./student_assignment.php?id=<?php echo $row['module_id'] ?>">
+                                <img src="../images/1.jpg" alt="#">
+                                <h3><?php 
+                                        $rawModule = Module::getNameFromID($row['module_id']);
+                                        $parsedModule = mysqli_fetch_assoc($rawModule);
+                                        echo $parsedModule['name'];
+                                    ?></h3>
+                            </a>
                         </div>
                         <?php
                     }  
