@@ -289,3 +289,9 @@ tr:nth-child(even) {
   padding: 5px 10px;
   margin: 0;
 }
+
+.module a {
+  text-decoration: none;
+  color: var(--sidebar-background);
+  display: block;
+}

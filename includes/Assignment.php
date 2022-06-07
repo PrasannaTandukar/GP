@@ -1,5 +1,7 @@
 <?php
 
+use LDAP\Result;
+
 include "./db.php";
 
 class Assignment {
@@ -108,9 +110,22 @@ class Assignment {
         global $connection;
 
         $query = "SELECT name FROM assignments WHERE id= $id";
-        echo $query;
 
         $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
+
+    public static function getAllAssignmentFromModule($id) {
+        global $connection;
+
+        $query = "SELECT name, start_date, end_date FROM assignments WHERE module_id= $id";
+
+        $result = mysqli_query($connection, $query);
+
         if (!$result) {
             die("Query failed");
         }
