@@ -9,7 +9,22 @@ if (isset($_POST['login'])) {
     $username = mysqli_real_escape_string($connection, $username);
     $password = mysqli_real_escape_string($connection, $password);
 
+
+
     // Check admin and route to admin page
+    checkAdmin($username, $password);
+
+    // CHheck user and route to user page
+    checkUser($username, $password);
+
+    header("Location: ../index.php");
+        
+
+    // else if for student portal, change sessions
+}
+
+function checkAdmin($username, $password) {
+    global $connection;
     $query = "SELECT * FROM users WHERE  username = '{$username}' ";
     $select_user_query = mysqli_query($connection, $query);
 
@@ -26,10 +41,13 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $db_username;
             $_SESSION['role'] = $db_role;
             header("Location: ../rms/records_management.php");
+            exit();
         }
     }
+}
 
-    // CHheck user and route to user page
+function checkUser($username, $password) {
+    global $connection;
     $query = "SELECT id FROM students WHERE  id = '{$username}' ";
     $select_user_query = mysqli_query($connection, $query);
 
@@ -44,9 +62,7 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $db_username;
             $_SESSION['role'] = 'user';
             header("Location: ../student-portal/student_portal.php");
-        } else {
-            header("Location: ../index.php");
+            exit();
         }
     }
-    // else if for student portal, change sessions
 }
