@@ -58,6 +58,20 @@ class Student {
         return $result;
     }
 
+    public static function getEnrolledStudent($id) {
+        global $connection;
+
+        $query = "SELECT * FROM students ";
+        $query .= "WHERE course_id = $id";
+            
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
+
     public static function deleteStudent() {
         if (isset($_GET['id'])) {
             global $connection;
