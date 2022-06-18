@@ -124,4 +124,17 @@ class Module {
 
         return $result;
     }
+
+    public static function getAssignmentFromID($id) {
+        global $connection;
+
+        $query = "SELECT id, name FROM assignments WHERE module_id= $id";
+
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
 }
