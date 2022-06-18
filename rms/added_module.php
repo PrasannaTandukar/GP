@@ -6,11 +6,11 @@
 
 <?php
     include "../includes/db.php";
-    include "../includes/Student.php";
+    include "../includes/Module.php";
 
     // Stores rows of data fetched from student table
     $id = $_GET['id'];
-    $result = Student::getEnrolledStudent($id);
+    $result = Module::getAddedModule($id);
 ?>
 
 <?php include "../includes/header.php"; ?>
@@ -20,21 +20,12 @@
     <div class="main-content">
         <div class="table-container">
             <div class="top-table">
-                <h1>Enrolled Students</h1>
+                <h1>Added Modules</h1>
             </div>
             <table>
                 <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Gender</th>
-                    <th>Contact</th>
-                    <th>Email</th>
-                    <th>Country</th>
-                    <th>city</th>
-                    <th>DOB</th>
-                    <th>Date Registered</th>
-                    <th>Course_id</th>
+                    <th>Name</th>
                 </tr>
                 <!-- Code to insert each row fetched from students table -->
                 <?php
@@ -44,6 +35,10 @@
                         <?php
                         foreach ($row as $value) {
                             echo "<th style='font-weight: normal;'>{$value}</th>";
+
+                            $linkedCourseName = Module::getNameFromID($value);
+                            $finalLinkedCourseName = mysqli_fetch_assoc($linkedCourseName);
+                            echo "<th style='font-weight: normal;'>{$finalLinkedCourseName['name']}</th>";
                         }
                         ?>
                         </tr>
