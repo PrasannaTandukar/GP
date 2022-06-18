@@ -32,6 +32,7 @@
                     <th>Edit</th>
                     <th>Add Module</th>
                     <th>View Students</th>
+                    <th>View Modules</th>
                 </tr>
                 <!-- Code to insert each row fetched from course table -->
                 <?php
@@ -47,6 +48,7 @@
                         <th><a href="./edit_course_record.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
                         <th><a href="./add_c_m.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">add</span></a></th>
                         <th><a href="./enrolled_student.php?id=<?php echo $row['id'] ?>" style="color: black;"><span class="material-symbols-outlined">visibility</span></a></th>
+                        <th><a href="./added_module.php?id=<?php echo $row['id'] ?>" style="color: black;"><span class="material-symbols-outlined">visibility</span></a></th>
                         </tr>
                         <?php
                     }

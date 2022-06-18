@@ -110,4 +110,18 @@ class Module {
 
         return $result;
     }
+
+        public static function getAddedModule($id) {
+        global $connection;
+
+        $query = "SELECT module_id FROM course_modules ";
+        $query .= "WHERE course_id = $id";
+            
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
 }
