@@ -42,9 +42,9 @@
                             echo "<th style='font-weight: normal;'>{$value}</th>";
                         }
                         ?>
-                        <th><a href="./module_record.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined" style="color: black;">delete</span></a></th>
-                        <th><a href="./edit_module_record.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
-                        <th><a href="./added_assignment.php?id=<?php echo $row['id'] ?>" style="color: black;"><span class="material-symbols-outlined">visibility</span></a></th>
+                        <th><a href="./module_record.php?id=<?php echo $row['id']; ?>"><img class="svg" src="../icons/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="#"></a></a></th>
+                        <th><a href="./edit_module_record.php?id=<?php echo $row['id'] ?>"><img class="svg" src="../icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="#"></a></a></th>
+                        <th><a href="./added_assignment.php?id=<?php echo $row['id'] ?>" style="color: black;"><img class="svg" src="../icons/visibility_FILL0_wght400_GRAD0_opsz48.svg" alt="#"></a></a></th>
                         </tr>
                         <?php
                     }

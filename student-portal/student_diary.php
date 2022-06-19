@@ -3,12 +3,12 @@
 <?php
     include "../includes/check_session_student.php";
     include "../includes/db.php";
-    include "../includes/Student.php";
+    include "../includes/Diary.php";
 ?>
 
 <?php
-    // $result = Student::getSingleStudent($_SESSION['username']);
-    // $studentName = Student::getStudentName($_SESSION['username']);
+    $result = Diary::read($_SESSION['username']);
+    Diary::delete();
 ?>
 
 <?php include "./partials/header.php"; ?>
@@ -25,23 +25,27 @@
                 <tr>
                     <th>ID</th>
                     <th>Title</th>
+                    <th>Date Posted</th>
                     <th>Delete</th>
                     <th>Edit</th>
                     <th>View</th>
                 </tr>
                 <!-- Code to insert each row fetched from students table -->
                 <?php
-                    // while($row = mysqli_fetch_assoc($result)) {
+                    while($row = mysqli_fetch_assoc($result)) {
                         ?>
-                        <!-- <tr> -->
+                        <tr>
                         <?php
-                        // foreach ($row as $value) {
-                            // echo "<th style='font-weight: normal;'>{$value}</th>";
-                        // }
+                        foreach ($row as $value) {
+                            echo "<th style='font-weight: normal;'>{$value}</th>";
+                        }
                         ?>
-                        <!-- </tr> -->
+                        <th><a href="./student_diary.php?id=<?php echo $row['id']; ?>"><img class="svg" src="../icons/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="#"></a></th>
+                        <th><a href="./edit_diary.php?id=<?php echo $row['id'] ?>"><img class="svg" src="../icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="#"></a></th>
+                        <th><a href="./view_diary.php?id=<?php echo $row['id'] ?>" style="color: black;"><img class="svg" src="../icons/visibility_FILL0_wght400_GRAD0_opsz48.svg" alt="#"></a></th>
+                        </tr>
                         <?php
-                    // }
+                    }
                 ?>
             </table>
         </div>

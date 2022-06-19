@@ -59,6 +59,7 @@ CREATE TABLE assignments (
 -- Create diaries table
 CREATE TABLE diaries (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
     date_posted DATE NOT NULL,
     student_id INT UNSIGNED NOT NULL,
@@ -112,7 +113,8 @@ ON DELETE CASCADE;
 
 ALTER TABLE diaries
 ADD CONSTRAINT fk_d_students
-FOREIGN KEY (student_id) REFERENCES students(id);
+FOREIGN KEY (student_id) REFERENCES students(id)
+ON DELETE CASCADE;
 
 -- Insert data
 INSERT INTO users (username, password, role)

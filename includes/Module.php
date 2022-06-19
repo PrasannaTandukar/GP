@@ -46,7 +46,6 @@ class Module {
         
             $query = "DELETE FROM modules ";
             $query .= "WHERE id = $id ";
-            echo $query;
             
             $result = mysqli_query($connection, $query);
         
