@@ -7,6 +7,7 @@
         <div class="part-2">
             <a href="./student_portal.php">Home</a>
             <a href="./student_module.php">Modules</a>
+            <a href="./student_diary.php">Diary</a>
         </div>
         <div class="part-3">
             <hr>
