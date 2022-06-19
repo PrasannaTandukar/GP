@@ -56,6 +56,25 @@ CREATE TABLE assignments (
     CONSTRAINT pk_assignments PRIMARY KEY (id)
 );
 
+-- Create diaries table
+CREATE TABLE diaries (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    content TEXT NOT NULL,
+    date_posted DATE NOT NULL,
+    student_id INT UNSIGNED NOT NULL,
+    CONSTRAINT pk_diaries PRIMARY KEY (id)
+);
+
+-- Create users table
+CREATE TABLE users (
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(255) NOT NULL,
+    CONSTRAINT pk_users PRIMARY KEY (id)
+);
+
 -- Add foreign key
 ALTER TABLE students
 ADD CONSTRAINT fk_s_courses
@@ -91,3 +110,12 @@ ALTER TABLE assignments
 ADD CONSTRAINT fk_a_modules
 FOREIGN KEY (module_id) REFERENCES modules(id)
 ON DELETE CASCADE;
+
+ALTER TABLE diaries
+ADD CONSTRAINT fk_d_students
+FOREIGN KEY (student_id) REFERENCES students(id)
+ON DELETE CASCADE;
+
+-- Insert data
+INSERT INTO users (username, password, role)
+VALUES ("admin", "root", "admin");

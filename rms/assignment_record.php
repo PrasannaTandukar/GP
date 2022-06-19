@@ -44,8 +44,8 @@
                             echo "<th style='font-weight: normal;'>{$value}</th>";
                         }
                         ?>
-                        <th><a href="./assignment_record.php?id=<?php echo $row['id']; ?>"><span class="material-symbols-outlined" style="color: black;">delete</span></a></th>
-                        <th><a href="./edit_assignment_record.php?id=<?php echo $row['id'] ?>"><span class="material-symbols-outlined" style="color: black;">edit</span></a></th>
+                        <th><a href="./assignment_record.php?id=<?php echo $row['id']; ?>"><img class="svg" src="../icons/delete_FILL0_wght400_GRAD0_opsz48.svg" alt="#"></a></th>
+                        <th><a href="./edit_assignment_record.php?id=<?php echo $row['id'] ?>"><img class="svg" src="../icons/edit_FILL0_wght400_GRAD0_opsz48.svg" alt="#"></a></a></th>
                         </tr>
                         <?php
                     }

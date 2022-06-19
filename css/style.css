@@ -295,3 +295,9 @@ tr:nth-child(even) {
   color: var(--sidebar-background);
   display: block;
 }
+
+.svg {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
