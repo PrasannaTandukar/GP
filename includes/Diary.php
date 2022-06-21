@@ -106,4 +106,17 @@ class Diary {
             return $result;
         }
     }
+
+    public static function getDiaryData($id) {
+        global $connection;
+
+        $query = "SELECT title, content FROM diaries WHERE id = $id";
+        
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
 }

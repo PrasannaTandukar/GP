@@ -6,6 +6,9 @@
     include "../includes/check_session_student.php";
     $id = $_GET['id'];
     Diary::update();
+
+    $value = Diary::getDiaryData($id);
+    $result = mysqli_fetch_assoc($value);
 ?>
 
 <?php include "../includes/header.php"; ?>
@@ -19,11 +22,11 @@
                 <div class="form-group">
                     <label for="title">Title: </label>
                     <br>
-                    <input type="text" name="title" required>
+                    <input type="text" name="title" value="<?php echo $result['title']; ?>" required>
                     <br>
                     <label for="content">Content: </label>
                     <br>
-                    <textarea type="text" name="content" cols="40" rows="8" style="padding: 8px;" required></textarea>
+                    <textarea type="text" name="content" cols="50" rows="25" style="padding: 8px;" required><?php echo $result['content']; ?></textarea>
                 </div>
                     <!-- Send user id anonymously -->
                     <input type="text" name="id" value="<?php echo $id ?>" hidden>
