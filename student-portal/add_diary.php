@@ -7,10 +7,10 @@
     Diary::create();
 ?>
 
-<?php include "../includes/header.php"; ?>
+<?php include "./partials/header.php"; ?>
 
 <main class="main-record">
-    <?php include "../includes/sidebar.php" ?>
+    <?php include "./partials/sidebar.php" ?>
     <div class="main-content">
         <div class="table-container">
             <h1>Add Diary</h1>
