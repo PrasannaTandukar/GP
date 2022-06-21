@@ -6,6 +6,9 @@
     include "../includes/check_session_admin.php";
     $id = $_GET['id'];
     Module::update();
+
+    $moduleName = Module:: getNameFromID($id);
+    $result = mysqli_fetch_assoc($moduleName);
 ?>
 
 <?php include "../includes/header.php" ?>
@@ -19,7 +22,7 @@
                 <div class="form-group">
                     <label for="name">Name: </label>
                     <br>
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" value="<?php echo $result['name']; ?>" required>
                 </div>
                     <!-- Send user id anonymously -->
                     <input type="text" name="id" value="<?php echo $id ?>" hidden>

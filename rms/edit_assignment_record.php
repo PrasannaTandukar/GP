@@ -6,6 +6,9 @@
     include "../includes/check_session_admin.php";
     $id = $_GET['id'];
     Assignment::update();
+
+    $values = Assignment::getDataFromID($id);
+    $result = mysqli_fetch_assoc($values);
 ?>
 
 <?php include "../includes/header.php" ?>
@@ -19,7 +22,15 @@
                 <div class="form-group">
                     <label for="name">Name: </label>
                     <br>
-                    <input type="text" name="name" required>
+                    <input type="text" name="name" value="<?php echo $result['name']; ?>" required>
+                    <br>
+                    <label for="start-date">Start Date: </label>
+                    <br>
+                    <input type="date" name="start-date" value="<?php echo $result['start_date']; ?>" required>
+                    <br>
+                    <label for="end-date">End Date: </label>
+                    <br>
+                    <input type="date" name="end-date"  value="<?php echo $result['end_date']; ?>" required>
                 </div>
                     <!-- Send user id anonymously -->
                     <input type="text" name="id" value="<?php echo $id ?>" hidden>
