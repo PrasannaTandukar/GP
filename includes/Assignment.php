@@ -74,12 +74,14 @@ class Assignment {
             
             $id = $_POST['id'];
             $name = $_POST['name'];
+            $startDate = $_POST['start-date'];
+            $endDate = $_POST['end-date'];
 
             // Prevent SQL injection
             mysqli_real_escape_string($connection, $name);
 
             $query = "UPDATE assignments ";
-            $query .= "SET name = '$name' ";
+            $query .= "SET name = '$name', start_date = '$startDate', end_date = '$endDate' ";
             $query .= "WHERE id = $id";
 
             $result = mysqli_query($connection, $query);
@@ -110,6 +112,19 @@ class Assignment {
         global $connection;
 
         $query = "SELECT name FROM assignments WHERE id= $id";
+
+        $result = mysqli_query($connection, $query);
+        if (!$result) {
+            die("Query failed");
+        }
+
+        return $result;
+    }
+
+    public static function getDataFromID($id) {
+        global $connection;
+
+        $query = "SELECT * FROM assignments WHERE id= $id";
 
         $result = mysqli_query($connection, $query);
         if (!$result) {
