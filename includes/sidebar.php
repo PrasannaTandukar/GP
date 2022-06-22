@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="sidebar-content">
         <div class="part-1">
-            <h3>Course Manaegement System</h3>
+            <h3>Course Management System</h3>
             <hr>
         </div>
         <div class="part-2">
