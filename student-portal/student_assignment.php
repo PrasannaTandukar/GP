@@ -34,6 +34,7 @@
                     <th>Name</th>
                     <th>Start Date</th>
                     <th>End Date</th>
+                    <th>Upload</th>
                 </tr>
                 <!-- Code to insert each row fetched from students table -->
                 <?php
@@ -45,6 +46,7 @@
                             echo "<th style='font-weight: normal;'>{$value}</th>";
                         }
                         ?>
+                        <th><a href="./assignment_upload.php?id=<?php echo $row['id'] ?>" style="color: black;">upload</a></th>
                         </tr>
                         <?php
                     }
